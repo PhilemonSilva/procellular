@@ -23,14 +23,14 @@ export const CellSchema = z.object({
 });
 
 export const ConfigSchema = z.object({
-  mapDimension: z.number(),
-  roomsPerRow: z.number(),
-  fill: z.number(),
+  mapDimension: z.number().default(100),
+  roomsPerRow: z.number().default(4),
+  fill: z.number().default(40),
   seed: z.string().nullish(),
-  roomWallMinimumWidth: z.number(),
-  pathWidth: z.number(),
-  organicPaths: z.boolean(),
-  deadEndSpawnChance: z.number(),
+  roomWallMinimumWidth: z.number().default(2),
+  pathWidth: z.number().default(3),
+  organicPaths: z.boolean().default(true),
+  deadEndSpawnChance: z.number().default(50),
   entryCell: CellSchema.default({
     "id": -1,
     "name": "entry",
