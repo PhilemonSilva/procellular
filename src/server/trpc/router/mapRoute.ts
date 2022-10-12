@@ -1,7 +1,7 @@
 import {t} from "../trpc";
 import {z} from "zod";
 
-export const map = t.router({
+export const mapRoute = t.router({
   generateMapGrid: t.procedure
     .input(
       z.object({
@@ -35,9 +35,9 @@ export const map = t.router({
       }))
     .query(({input}) => {
       return [
-        [{color: 'bg-white'}, {color: 'bg-yellow-400'}, {color: 'bg-white'}],
-        [{color: 'bg-yellow-400'}, {color: 'bg-white'}, {color: 'bg-yellow-400'}],
-        [{color: 'bg-white'}, {color: 'bg-yellow-400'}, {color: 'bg-white'}],
+        [{color: 'bg-[#f1c40f]'}, {color: 'bg-[#e74c3c]'}, {color: 'bg-[#f1c40f]'}],
+        [{color: 'bg-[#e74c3c]'}, {color: 'bg-[#f1c40f]'}, {color: 'bg-[#e74c3c]'}],
+        [{color: 'bg-[#f1c40f]'}, {color: 'bg-[#e74c3c]'}, {color: 'bg-[#f1c40f]'}],
       ]
     }),
 });

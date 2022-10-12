@@ -58,7 +58,7 @@ const Home: NextPage = () => {
   const disabledClass = 'disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none disabled:opacity-70 disabled:hover:scale-100'
 
   const [config, setConfig] = useState(mock)
-  const grid = trpc.example.generateMapGrid.useQuery(config);
+  const grid = trpc.mapGenerator.generateMapGrid.useQuery(config);
 
   return (
     <div className='bg-blue-900 w-screen h-screen flex justify-between'>
@@ -68,7 +68,7 @@ const Home: NextPage = () => {
             {grid.data?.map(row => {
               return <div className='flex flex-grow flex-shrink'>
                 {row.map(cell => {
-                  return <div className={`flex-grow flex-shrink transition duration-3000 bg-[${cell.color}]`}/>
+                  return <div className={`flex-grow flex-shrink transition duration-3000 ${cell.color}`}/>
                 })}
               </div>
             })}

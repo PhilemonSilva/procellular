@@ -1,10 +1,10 @@
 // src/server/router/index.ts
 import { t } from "../trpc";
 
-import { map } from "./map";
+import { mapRoute } from "./mapRoute";
 
 export const appRouter = t.router({
-  example: map,
+  mapGenerator: mapRoute,
 });
 
 // export type definition of API
