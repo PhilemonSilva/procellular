@@ -67,9 +67,7 @@ const Home: NextPage = () => {
         <div className={`rounded bg-white w-5/6 h-5/6 self-center flex flex-col p-1`}>
             {grid.data?.map(row => {
               return <div className='flex flex-grow flex-shrink'>
-                {row.map(cell => {
-                  return <div className={`flex-grow flex-shrink transition duration-3000 ${cell.color}`}/>
-                })}
+                {row.map(cell => <div className={`flex-grow flex-shrink transition duration-3000 ${cell.color}`}/>)}
               </div>
             })}
         </div>
