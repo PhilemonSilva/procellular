@@ -15,9 +15,9 @@ Array.prototype.iterate = function (fn: (a: any) => void) {
 }
 
 export const CellSchema = z.object({
-  id: z.number(),
+  id: z.number().nullish(),
   name: z.string().nullish(),
-  solid: z.boolean(),
+  solid: z.boolean().nullish(),
   color: z.string(),
   spawnChance: z.number().nullish()
 });
