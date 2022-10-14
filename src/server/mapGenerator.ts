@@ -1,21 +1,12 @@
 import {Cell, Config} from "../types";
-import {forEach} from "superjson/dist/util";
+import {setSeed} from "../utils/rng";
 
 
-const generateMap = (config:Config): Cell[][] => {
-  const myArray: Cell[][] = [];
-  for (let i = 0; i < config.mapDimension; i++) {
-    let column:Cell[] =[];
-    for (let j = 0; j < config.mapDimension; j++) {
-      if(j%2===0)
-        column.push({color: 'bg-red-400'})
-      else
-        column.push({color: 'bg-yellow-400'})
-    }
-    myArray.push(column);
-  }
+const generateMap = (config: Config): Cell[][] => {
+  setSeed(config.seed);
+  let sideOfRoomSize = config.mapDimension / config.roomsPerRow;
 
-  return myArray
+  return []
 }
 
 export {generateMap};

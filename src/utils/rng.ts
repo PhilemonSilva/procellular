@@ -2,7 +2,7 @@ const sr = require('seedrandom');
 let rng = sr();
 let previouslyUsedSeed = '';
 
-export const setSeed = (seed:string):void => {
+export const setSeed = (seed:string|null|undefined):void => {
   if(seed) rng = sr(seed);
   else{
     previouslyUsedSeed = makeRandomSeed(15);
